@@ -4,7 +4,10 @@ from stats import word_count
 from stats import total_characters
 from stats import sorted_characters
 
-book_path = "/home/gabe/workspace/github.com/bookbot/books/frankenstein.txt"
+if len(sys.argv) != 2:
+	print("Usage: python3 main.py <path_to_book>")
+	sys.exit(1)
+book_path = sys.argv[1]
 
 def get_book_text(filepath): # Reading txt file and passing into string
 	with open(filepath) as f:
